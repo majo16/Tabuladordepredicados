@@ -1,0 +1,7 @@
+nc = ["hombre", "empresa","mujer", "libro", "animal", "niño","niña","fruta","amigo","amiga","profesor","profesora","edificio","perro", "pajaro","gato","pais","ciudad"]
+vi = ["camina", "bebe", "corre", "duerme","nada","sonrie", "vive", "baila", "come","canta","estornuda","fracasa","grita","llora","patina","pelea","respira","trabaja"]
+vt = ["ama", "contrata", "invita", "lee", "compra", "estudia", "escribe","quiere","alimenta","asusta","dice","engaña", "evita", "llama","mira","olvida","necesita","molesta","perdona","visita", "viaja"]
+d1 = ["un", "una"]
+d2 = ["toda", "todo"]
+c = ["y", "o", "si", "entonces"]
+np = ["pedro", "maria", "cocacola","juan", "javier","abel", "mario","valerie", "jose", "angela", "natalia", "rupaul", "carlos", "fernando", "alejandro", "miguel","esteban", "gabriela","oscar","samuel","victor","edgar", "carlos","eduardo", "sergio", "nicolas", "nathalia","camilo","sebastian","isabella","luisa","sara","rodrigo","angel", "daniel", "manuel","andres","felipe","david", "kevin","cristhian","edwin", "julian", "maría", "josé", "juana", "bart", "lisa"]
