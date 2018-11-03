@@ -5,3 +5,5 @@ d1 = ["un", "una"]
 d2 = ["toda", "todo"]
 c = ["y", "o", "si", "entonces"]
 np = ["pedro", "maria", "cocacola","juan", "javier","abel", "mario","valerie", "jose", "angela", "natalia", "rupaul", "carlos", "fernando", "alejandro", "miguel","esteban", "gabriela","oscar","samuel","victor","edgar", "carlos","eduardo", "sergio", "nicolas", "nathalia","camilo","sebastian","isabella","luisa","sara","rodrigo","angel", "daniel", "manuel","andres","felipe","david", "kevin","cristhian","edwin", "julian", "maría", "josé", "juana", "bart", "lisa"]
+
+print ("")
