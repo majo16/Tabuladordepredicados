@@ -1,0 +1,206 @@
+# -*- coding: utf-8 -*-
+import busqueda_verbos_infinitvo
+from busqueda_verbos_infinitvo import *
+import re
+
+verbos_sin_espacio = []
+for i in verbos_sin_salto_linea(verbos):
+    x = i.strip()
+    verbos_sin_espacio.append(x)
+    
+
+x = len(verbos_sin_espacio)
+print(x)
+
+
+lista_verbos_pasado = []
+
+count = 0
+for i in verbos_sin_espacio:
+    l = len(i)
+    if i == "andar":
+        print("anduvo", end="|")
+        
+    elif i == "transponer":
+        print("transpuso", end="|")
+        
+    elif i == "traer":
+        print("trajo", end="|")
+        
+    elif i == "tener":
+        print("tuvo", end="|")
+        
+    elif i == "sustraer":
+        print("sustrajo", end="|")
+        
+    elif i == "suponer":
+        print("supuso", end="|")
+        
+    elif i == "sostener":
+        print("sostuvo", end="|")
+        
+    elif i == "sobreponer":
+        print("sobrepuso", end="|")
+        
+    elif i == "ser":
+        print("fue", end="|")
+        
+    elif i == "satisfacer":
+        print("satisfizo", end="|")
+        
+    elif i == "saber":
+        print("supo", end="|")
+        
+    elif i == "roer":
+        print("royó", end="|")
+        
+    elif i == "retener":
+        print("retuvo", end="|")
+        
+    elif i == "reponer":
+        print("repuso", end="|")
+        
+    elif i == "querer":
+        print("quiso", end="|")
+        
+    elif i == "proponer":
+        print("propuso", end="|")
+        
+    elif i == "proveer":
+        print("proveyó", end="|")
+        
+    elif i == "poner":
+        print("puso", end="|")
+        
+    elif i == "poder":
+        print("pudo", end="|")
+        
+    elif i == "oponer":
+        print("opuso", end="|")
+        
+    elif i == "obetener":
+        print("obtuvo", end="|")
+        
+    elif i == "mantener":
+        print("mantuvo", end="|")
+        
+    elif i == "leer":
+        print("leyó", end="|")
+        
+    elif i == "imponer":
+        print("impuso", end="|")
+        
+    elif i == "hacer":
+        print("hizo", end="|")
+        
+    elif i == "haber":
+        print("hubo", end="|")
+        
+    elif i == "estar":
+        print("estuvo", end="|")
+        
+    elif i == "entretener":
+        print("entretuvo", end="|")
+        
+    elif i == "extraer":
+        print("extrajo", end="|")
+        
+    elif i == "exponer":
+        print("expuso", end="|")
+        
+    elif i == "distraer":
+        print("distrajo", end="|")
+        
+    elif i ==  "deshacer":
+        print("deshizo", end="|")
+        
+    elif i ==  "descomponer":
+        print("descompuso", end="|")
+        
+    elif i == "deponer":
+        print("depuso", end="|")
+        
+    elif i == "disponer":
+        print("dispuso", end="|")
+        
+    elif i == "detener":
+        print("detuvo", end="|")
+        
+    elif i ==  "dar":
+        print("dió", end="|")
+        
+    elif i == "componer":
+        print("compuso", end="|")
+        
+    elif i == "creer":
+        print("creyó", end="|")
+        
+    elif i == "contraer":
+        print("contrajo", end="|")
+        
+    elif i == "contener":
+        print("contuvo", end="|")
+        
+    elif i == "caer":
+        print("cayó", end="|")
+    
+    elif i == "decir":
+        print("dijo", end="|")
+    
+    elif i == "pedir":
+        print("pidió", end="|")
+        
+    elif i == "ir":
+        print("fue", end="|")
+        
+    elif i == "oir":
+        print("oyó", end="|")
+        
+    elif i == "divertir":
+        print("divirtió", end="|")
+        
+    elif i == "vestir":
+        print("vistió", end="|")
+        
+    elif i == "advertir":
+        print("advirtió", end="|")
+        
+    elif i == "competir":
+        print("compitió", end="|")
+        
+    elif i == "lucir":
+        print("lució", end="|")
+        
+    elif i[-4:len(i)] == "eñir":
+        x = i[:-4] + "iñó"
+        print(x, end="|")
+        
+    elif i[-3:len(i)] == "ñir":
+        x = i[:-2] + "ó"
+        print(x, end="|") 
+        
+    elif i[-4:len(i)] == "ucir":
+        x = i[:-3] + "jo"
+        print(x, end="|") 
+
+    elif i[-1] == "r" and i[-2] == "a":
+        x = i[:l-2] +"ó"
+        print(x, end="|")
+        
+    elif i[-1] == "r" and i[-2] == "e":
+        x = i[:l-2] +"ió"
+        print(x, end="|")
+        
+    elif (i[-1] == "r" and i[-2] == "i") or (i[-1] == "r" and i[-2] == "i" and i[-3] == "e"):
+        x = i[:l-2] + "ió"
+        print(x, end="|")
+        
+#LA VARIABLE "verbs_pasado" SALE DE LA IMPRESION DE LOS VERBOS EN PASADO 
+        
+verbs_pasado = "\s(abandonó|abjuró|ablandó|abochornó|abofeteó|abolió|abordó|abortó|abovedó|abrasó|abrazó|abrevió|abrió|abrochó|abrumó|absorbió|abucheó|abundó|aburrió|abusó|acabó|acalló|acampó|acaparó|acarició|accedió|accionó|acechó|aceitó|aceleró|acentuó|acepilló|aceptó|aceró|acercó|acható|acicaló|aclamó|aclaró|aclimató|acogió|acolchó|acometió|acomodó|acompañó|aconsejó|acopló|acordó|acorraló|acosó|acostó|acotó|acreditó|acribilló|activó|actuó|acuarteló|acumuló|acunó|acusó|acuñó|adaptó|adecentó|adelantó|adherió|adiestró|adivinó|adjuntó|administró|admiró|admitió|adobó|adoptó|adoró|adornó|aduló|adulteró|afectó|afeitó|afiló|afinó|afirmó|agarró|agitó|agoró|agrió|ahogó|alargó|alegró|alimentó|alivió|alquiló|amó|amenazó|amplió|anduvo|animó|anticipó|apagó|aparcó|apareció|aplaudió|aplicó|apostó|apoyó|aprendió|aprovechó|apuntó|ardió|arregló|arrepentió|arriesgó|arrojó|aseguró|asentió|asesinó|asistió|asoló|atacó|atendió|atenuó|aterró|aterrizó|atracó|atrapó|aumentó|avanzó|avisó|ayudó|añadió|aflojó|afrentó|afrontó|agenció|agotó|agradó|agradeció|agrandó|agravó|agravió|agrietó|aguantó|aguardó|aguijó|agujereó|ahondó|ahorró|aireó|ajustó|ajustició|alabó|alabeó|alanceó|alarmó|alcanzó|aleó|alejó|alertó|alfombró|aligeró|alisó|alistó|allanó|almacenó|almorzó|alojó|alquitranó|alteró|alucinó|alumbró|amainó|amamantó|amarró|amasó|ambicionó|amonestó|amotinó|ampolló|amputó|amuebló|ancló|anestesió|anexó|angostó|anheló|anidó|aniquiló|anotó|anuló|anunció|apadrinó|apareó|aparejó|aparentó|apartó|apedreó|apeló|apestó|apisonó|aplanó|aplastó|apocopó|apoderó|aportó|apreció|aprehendió|apremió|apresuró|aproximó|apuñaló|aquejó|aquietó|arañó|arbitró|archivó|armó|arponeó|arqueó|arrasó|arrastró|arreó|arrebató|arrestó|arribó|arruinó|arrulló|articuló|asaltó|asó|asedió|asesoró|asfixió|asignó|asimiló|asoció|asoleó|asombró|aspiró|asqueó|astilló|asumió|asustó|atajó|ató|atontó|atornilló|atrasó|atrevió|atrincheró|atropelló|aturdió|auguró|auscultó|auspició|aventajó|aventuró|averiguó|avistó|avivó|babeó|bailó|bajó|balanceó|baló|balbuceó|baldó|bamboleó|barajó|barató|barrió|barritó|basó|bastó|batalló|bateó|batió|bautizó|bañó|bebió|bendeció|benefició|besó|birló|biseló|blandió|blanqueó|blasonó|bloqueó|boicoteó|bombardeó|bombeó|boqueó|bordó|bordeó|borró|bostezó|botó|boxeó|bramó|brilló|brincó|brindó|bromeó|bronceó|brotó|buceó|bufó|bullió|burbujeó|burló|buscó|cabalgó|cabió|cacareó|cayó|calculó|caldeó|calentó|calibró|calló|calmó|calumnió|cambió|caminó|camufló|canceló|canjeó|cansó|cantó|capituló|captó|capturó|cardó|carenó|cargó|carreteó|casó|castigó|castró|cató|causó|cavó|cazó|cebó|ceceó|cedió|cegó|celó|celebró|cementó|cenó|censuró|centró|cepilló|cercenó|cerró|cesó|chapaleó|charló|chequeó|chilló|chismeó|chismorreó|chispeó|chorreó|chupó|cinceló|circuió|circundó|circunscribió|citó|clasificó|clausuró|clavó|claveteó|cloqueó|coaccionó|coaguló|cobró|coceó|coció|cocinó|codició|coexistió|cogió|coincidió|cojeó|colaboró|coleccionó|colgó|colindó|colmó|colocó|coloró|combatió|combinó|comentó|comenzó|comió|cometió|comparó|compelió|complicó|comportó|compró|comprendió|concertó|concilió|concluió|condenó|condujo|confió|confluió|confundió|conseguió|consideró|consistió|construió|contó|contuvo|continuó|contrajo|convenció|convertió|corregió|corrió|cortó|cosió|costó|creó|creció|creyó|crió|criticó|crujió|cruzó|cubrió|cuidó|cumplió|curó|caducó|calzó|caracterizó|careció|chateó|chocó|cicatrizó|circuló|cohibió|coló|comerció|comisionó|compactó|compartió|compensó|compitió|compiló|complació|completó|compuso|comprobó|comprometió|computó|comunicó|concebió|concedió|concentró|concordó|concretó|condensó|condicionó|conectó|conexionó|confeccionó|conferió|confesó|configuró|confinó|confirmó|conformó|confortó|confrontó|congeló|congratuló|conjeturó|conjugó|conllevó|conmovió|conoció|conquistó|consagró|consentió|conservó|consignó|consolidó|conspiró|constó|constató|constituió|consultó|consumió|contactó|contagió|contaminó|contempló|contentó|contestó|contrabalanceó|contradeció|contramandó|contrarrestó|contrastó|contrató|contribuió|controló|convalidó|conversó|convidó|convivió|convulsionó|cooperó|coordinó|copió|copuló|coqueteó|coronó|correspondió|corroboró|cortejó|cosechó|cosquilleó|cotejó|cotilleó|crepitó|croó|cronometró|cuadró|cuajó|cuarteó|cuchicheó|cuestionó|culminó|culpó|cultivó|cundió|cursó|curtió|curvó|custodió|damnificó|dió|dató|dañó|deambuló|debatió|debió|debilitó|decantó|decapitó|decepcionó|decidió|dijo|declamó|declaró|declinó|decomisó|decoró|decretó|dedicó|dedujo|defendió|definió|deformó|defraudó|degeneró|degradó|degustó|dejó|delató|deleitó|deletreó|deliberó|delimitó|delineó|demandó|demolió|demoró|demostró|denigró|denominó|denotó|denunció|dependió|deploró|deportó|depositó|depravó|depreció|deprimió|depuró|derivó|derramó|derribó|derrochó|derrotó|derruió|desabrochó|desacreditó|desactivó|desahució|desalojó|desanimó|desapareció|desarmó|desarregló|desarrolló|desató|desayunó|descansó|descarriló|descartó|descascaró|descifró|desconectó|descongeló|descontaminó|describió|descubrió|descuidó|desdeñó|desdibujó|desdobló|deseó|desechó|desembolsó|desencantó|desenchufó|desenganchó|desenmarañó|desenredó|desenrolló|desentonó|desertó|desestimó|desfiguró|desfiló|desgarró|desglosó|deshidrató|deshilachó|deshojó|deshonró|deshuesó|designó|desilusionó|desinfectó|desinfló|desintegró|desistió|deslindó|deslumbró|desmanteló|despedió|destruió|detuvo|devolvió|dibujó|dirigió|disculpó|discutió|disentió|disfrutó|disolvió|dispuso|distinguió|distribuió|divirtió|dividió|dobló|dolió|dormió|dudó|duró|danzó|delegó|depuso|derretió|descargó|descendió|descolgó|descompuso|desconoció|desembarcó|desenvolvió|deshizo|desmigajó|desnudó|desobedeció|desocupó|desovó|despachó|despegó|despejó|desperdició|despertó|despilfarró|desplazó|desplegó|desplumó|despojó|despreció|despuntó|desquició|destacó|destelló|destetó|destiló|destinó|destornilló|destripó|destronó|destrozó|desunió|desvaneció|desvestió|desvió|detalló|detectó|determinó|detestó|detonó|devastó|devenió|devoró|dictó|difamó|diferenció|diferió|difundió|dilató|dilucidó|diluvió|dimitió|dinamitó|disciplinó|discrepó|discriminó|diseminó|diseñó|disfrazó|disgustó|disimuló|disipó|disminuió|disoció|disparó|dispensó|dispersó|disputó|distorsionó|distrajo|disuadió|divisó|divorció|documentó|domó|dominó|donó|doró|dormitó|dotó|drenó|dribló|duchó|echó|eclipsó|edificó|editó|educó|ejecutó|ejerció|ejercitó|elaboró|elegió|elevó|eliminó|elogió|eludió|emancipó|embadurnó|embaló|embaldosó|embalsamó|embalsó|embarcó|embelesó|emborrachó|embotó|embotelló|embrujó|embutió|emergió|emigró|emitió|empacó|empalmó|empapó|empapeló|empaquetó|empastó|empató|empedernió|empeoró|empezó|empeñó|empleó|empolló|emprendió|empujó|empuñó|emuló|emulsionó|enarboló|encadenó|encajó|encaló|encandiló|encantó|encarceló|encargó|encarnó|encendió|enceró|encoló|encontró|encorvó|encuadernó|encuadró|encurtió|endosó|endulzó|enervó|enfadó|enfardó|enfermó|enfrentó|enganchó|engañó|engendró|englobó|engrapó|engrasó|engullió|enharinó|enhebró|enjauló|enlató|enmascaró|enojó|enredó|enrolló|ensambló|ensanchó|ensartó|ensayó|enseñó|ensilló|ensució|entabló|entendió|enterró|entró|entregó|entrenó|entrevió|envió|envolvió|equivalió|equivocó|erró|escaló|escondió|escribió|escuchó|esperó|esquió|estafó|estudió|evitó|exageró|excluió|exigió|existió|expedió|experimentó|explicó|exploró|explotó|expuso|exportó|exprimió|expulsó|extendió|extenuó|extinguió|extrajo|efectuó|emocionó|enamoró|encerró|encogió|enfrió|enriqueció|entablilló|enteró|entrampó|entremezcló|entretejió|entretuvo|entrevistó|entusiasmó|enumeró|enunció|envainó|envejeció|envenenó|envidió|enyesó|equilibró|equipó|erguió|erosionó|erradicó|eructó|escabechó|escaldó|escalfó|escalonó|escamoteó|escampó|escandió|escapó|escogió|escoltó|escopleó|escrutó|escudó|esculpió|escupió|escurrió|esforzó|esmaltó|espantó|esparció|especializó|especuló|espesó|espetó|espió|espiró|espoleó|espolvoreó|esposó|espumó|esquiló|esquivó|estableció|estacionó|estalló|estampó|estuvo|estimó|estimuló|estipuló|estiró|estofó|estorbó|estornudó|estranguló|estrechó|estrelló|estrenó|estropeó|estructuró|estrujó|etiquetó|evacuó|evadió|evaluó|evaporó|evolucionó|exacerbó|exaltó|examinó|exasperó|excavó|excedió|excitó|exclamó|excretó|excusó|exhaló|exhibió|exhortó|exhumó|exilió|eximió|exoneró|expandió|expelió|expiró|explayó|expresó|expropió|exterminó|extirpó|extorsionó|extraditó|extrañó|exudó|exultó|eyaculó|fabricó|facilitó|facturó|facultó|falló|falleció|falseó|faltó|fanfarroneó|fantaseó|fascinó|fastidió|favoreció|fechó|fecundó|felicitó|fermentó|festejó|fió|figuró|fijó|filmó|filosofó|filtró|finalizó|financió|fingió|firmó|fisgoneó|flageló|flanqueó|flaqueó|flexionó|flirteó|flojeó|floreó|floreció|flotó|fluctuó|fluió|fomentó|forcejeó|forjó|formó|formateó|formuló|forrajeó|forzó|fotocopió|fotografió|fracasó|fraccionó|fracturó|fragmentó|fraseó|frecuentó|fregó|frenó|frotó|frustró|fumó|funcionó|fundó|fundió|fusiló|galanteó|galopó|ganó|ganduleó|garabateó|garantió|garantizó|gaseó|gastó|gateó|gemió|generó|germinó|gesticuló|gestionó|gimoteó|giró|glaseó|glorificó|glosó|gobernó|golpeó|gorjeó|gorreó|gorroneó|goteó|gozó|grabó|gradó|graduó|granuló|grapó|gravitó|graznó|gritó|gruñó|guardó|guió|gustó|hubo|habilitó|habitó|habituó|habló|hizo|hacinó|haló|halló|hartó|hedió|heló|heredó|herió|hermanó|herró|hervió|hibernó|hidrató|hiló|hilvanó|hipó|hojeó|holgó|honró|horneó|hospedó|hospitalizó|huió|humeó|humedeció|humilló|hundió|ideó|identificó|idolatró|ignoró|iluminó|ilustró|imaginó|imantó|imbuió|imitó|impartió|impedió|impelió|imperó|implantó|implicó|imploró|impuso|importó|impregnó|impresionó|imprimió|improvisó|impugnó|impulsó|imputó|inauguró|incapacitó|incineró|incitó|inclinó|incluió|incomodó|incorporó|incrementó|incriminó|incubó|inculpó|incurrió|indicó|indignó|indujo|indultó|infeccionó|infectó|infestó|infiltró|inflamó|infló|influenció|influió|informó|infringió|ingenió|ingerió|ingresó|inhabilitó|inhaló|inhibió|inhumó|inició|injertó|injurió|inmigró|inmoló|innovó|inoculó|inquietó|inquirió|inscribió|insertó|insinuó|insistió|inspeccionó|inspiró|instaló|instó|instauró|instruió|instrumentó|insultó|integró|intentó|intercambió|intercedió|interceptó|interesó|internó|interpoló|interpretó|interrogó|interrumpió|intervenió|intimidó|intituló|intrigó|introdujo|intuió|inundó|invadió|invalidó|inventó|invertió|investigó|investió|invitó|invocó|involucró|inyectó|fue|irradió|irritó|jadeó|jaló|jubiló|jugó|jugueteó|juntó|juró|justó|justificó|juzgó|laceró|lacró|ladró|lamentó|lamió|laminó|lanzó|laqueó|lastimó|lastró|latió|lavó|laxó|leyó|legalizó|legisló|legitimó|levantó|liberó|libró|licenció|lideró|lidió|ligó|lijó|limó|limitó|limpió|linchó|lindó|liquidó|lisió|lisonjeó|llamó|llameó|llegó|llenó|llevó|lloró|llovió|lloviznó|loó|logró|luchó|lució|lustró|madrugó|maduró|magulló|malbarató|maldeció|malgastó|maltrató|malversó|mamó|manchó|mandó|manejó|manifestó|maniobró|manipuló|mantuvo|manufacturó|maquilló|maravilló|marcó|marchó|mareó|martilló|mascó|masculló|masticó|masturbó|mató|matriculó|meó|meció|medió|medió|meditó|medró|mejoró|memorizó|mencionó|mendigó|meneó|mentó|mentió|mereció|merendó|merodeó|metió|mezcló|mimó|minó|miró|modeló|moderó|modernizó|modificó|moduló|mojó|moldeó|molió|molestó|mondó|montó|moqueó|moró|mordió|morió|mostró|motivó|movió|mudó|multó|multiplicó|murmuró|mutó|mutiló|nació|nadó|narró|navegó|necesitó|negó|negoció|nevó|niveló|nombró|nominó|notó|notificó|nubló|numeró|nutrió|obedeció|objetó|obligó|obsequió|observó|obsesionó|obstruió|obtenió|obvió|ocasionó|ocultó|ocupó|ocurrió|odió|ofendió|ofició|ofreció|olió|olfateó|olvidó|omitió|ondeó|operó|opinó|opuso|oprimió|optó|oró|ordenó|oreó|organizó|orientó|originó|orilló|orinó|ornamentó|ornó|orquestó|osó|osciló|oscureció|otorgó|ovuló|oxidó|oxigenó|padeció|pagó|palmeó|palmoteó|palpó|palpitó|parafraseó|paró|parceló|pareó|pareció|parlamentó|parodió|parpadeó|participó|partió|pasó|paseó|pasmó|pastó|pataleó|pateó|patentó|patinó|patrocinó|patrulló|pausó|pavimentó|pedaleó|pidió|pegó|peinó|peló|peleó|penó|penetró|pensó|percibió|perdió|perdonó|perduró|peregrinó|perfeccionó|perfiló|perforó|perfumó|permaneció|permitió|permutó|perpetró|perpetuó|perseguió|perseveró|persistió|personificó|persuadió|perteneció|perturbó|pesó|pescó|pestañeó|picó|picoteó|pilló|pilotó|piloteó|pinchó|pintó|pirateó|pisó|pisoteó|plació|plagió|planchó|planeó|planificó|plantó|platicó|plisó|podó|pudo|ponderó|puso|pordioseó|posó|poseió|posponió|postuló|practicó|precavió|precedió|precipitó|precisó|predeció|predestinó|predeterminó|predominó|preferió|preguntó|premió|prendió|prensó|preocupó|preparó|presagió|prescribió|presentó|pretendió|prevaleció|prevenió|previó|probó|procedió|produjo|proferió|prohibió|prolongó|prometió|promovió|proseguió|protestó|proveyó|proyectó|publicó|pulió|pulsó|pendió|perjudicó|plagó|planteó|plegó|pobló|portó|presenció|preservó|presidió|presionó|prestó|presumió|principió|privó|procesó|proclamó|procreó|procuró|profanó|profesó|programó|progresó|proliferó|promocionó|pronunció|propició|propuso|proporcionó|propulsó|proscribió|prosperó|protagonizó|protegió|provenió|provocó|pudrió|pugnó|pujó|punteó|quebrantó|quebró|quedó|quejó|quemó|quiso|quitó|rabió|racionó|radió|rajó|ralló|rapó|raptó|rascó|rasgueó|rasguñó|raspó|rastrilló|rasuró|rayó|razonó|reabrió|reaccionó|reafirmó|realizó|reanimó|reanudó|rebajó|rebatió|rebobinó|rebosó|rebotó|rebuznó|recapituló|recaudó|recetó|rechazó|recibió|recicló|recitó|reclamó|reclinó|recluió|reclutó|recobró|recogió|recomendó|recompensó|reconcilió|reconoció|reconquistó|reconsideró|recopiló|recordó|recorrió|recortó|recreó|recriminó|recubrió|recuperó|redactó|redimió|redondeó|redujo|reembolsó|reemplazó|referió|refinó|reflejó|reflexionó|reformó|reforzó|refractó|refrendó|refrigeró|refugió|refutó|regaló|regó|regañó|regeneró|regió|registró|regresó|reguló|rehabilitó|reinó|reincidió|reincorporó|reinstaló|reiteró|relacionó|relajó|relató|relinchó|rellenó|relumbró|remachó|remó|remedó|remedió|remitió|remojó|remontó|remuneró|rendió|renqueó|rentó|renunció|reparó|repartió|repasó|repelió|repercutió|repetió|repuso|reposó|repostó|reprendió|representó|reprimió|reprochó|repudió|repugnó|repujó|rescató|reservó|residió|resignó|resistió|respetó|respiró|respondió|reunió|riñó|robó|rodó|rompió|roncó|rebeló|reconstruió|recostó|recurrió|regateó|rehusó|removió|renombró|renovó|replicó|reprodujo|requerió|requisó|resbaló|rescindió|resfrió|resolvió|resonó|resquebrajó|restalló|restó|restauró|restringió|resucitó|resultó|resumió|retardó|retuvo|retiró|retornó|retrasó|retrató|retrocedió|reveló|revendió|reverberó|reverenció|revisó|revistó|revivió|revolucionó|revolvió|rezó|ribeteó|rimó|rodeó|royó|rogó|rondó|rotó|rumió|supo|saboreó|saboteó|sacó|sació|sacrificó|sacudió|saló|saldó|salió|salivó|salpicó|saltó|saludó|salvaguardó|salvó|sanó|sancionó|sancochó|sangró|saqueó|satisfizo|sazonó|secó|secretó|secuestró|secundó|sedó|sedujo|segó|seguió|seleccionó|selló|sembró|sentó|sentenció|sentió|separó|sepultó|fue|sermoneó|serpenteó|serró|servió|señaló|significó|silbó|simbolizó|simplificó|simuló|sincopó|siseó|sitió|situó|sobornó|sobró|sobrellevó|sobrepasó|sobrepuso|sobresaltó|sobrevenió|sobrevivió|socavó|socorrió|solapó|soldó|solió|solicitó|soltó|solucionó|sombreó|sometió|sonó|sondó|sondeó|sopló|soportó|sorbió|sorprendió|sospechó|sostuvo|soñó|subastó|subdividió|subestimó|subió|sublimó|subordinó|subrayó|subscribió|subsistió|subvencionó|sucedió|sucumbió|sudó|sufrió|sugerió|sujetó|sumó|sumergió|suministró|superó|supervisó|suplantó|suplicó|supuso|suprimió|surgió|surtió|suscribió|suspendió|suspiró|sustentó|sustituió|sustrajo|susurró|tableteó|tachonó|taladró|talló|tambaleó|tamborileó|tapó|tapió|taponó|tarareó|tardó|tartamudeó|tasó|tatuó|tecleó|tejió|telefoneó|televisó|tembló|temió|temperó|templó|tendió|tuvo|tensó|tentó|terminó|tiñó|timó|timbró|tintineó|tiró|tiritó|titiló|tituló|tocó|toleró|tomó|tonteó|topetó|torció|torneó|torpedeó|torturó|tosió|tostó|trabajó|trabó|tradujo|trajo|traficó|tragó|traicionó|trajinó|tramó|tranquilizó|transó|transbordó|transcribió|transcurrió|transferió|transfiguró|transformó|transmitió|transpiró|transpuso|transportó|traqueteó|trasladó|traspasó|trasplantó|trasquiló|trastornó|trató|trazó|trepó|trilló|trinó|trinchó|tripuló|trituró|triunfó|trocó|troceó|tronó|tropezó|trotó|tumbó|tundió|turbó|turnó|tuteó|ubicó|ulceró|ultimó|ultrajó|ululó|unificó|unió|untó|usó|usurpó|utilizó|vació|vaciló|vacunó|vadeó|vagabundeó|vagó|valió|validó|valló|valoró|valsó|vapuleó|varó|varió|vaticinó|vedó|vegetó|vejó|venció|vendó|vendió|veneró|vengó|venió|ventiló|vió|veraneó|verificó|vistió|vetó|viajó|vibró|vigiló|vilipendió|vinculó|violó|viró|visitó|visualizó|vitoreó|vivió|voceó|vociferó|voló|volcó|volteó|volvió|vomitó|votó|yació|zanganeó|zanjó|zarandeó|zigzagueó|zumbó|zurció|oyó|advirtió|introdujo|reprodujo)(\s|\.|)"
+
+patron2 = re.compile(verbs_pasado)
+matches2 = patron2.finditer(cad)
+
+for n in matches2:
+    print(n)
