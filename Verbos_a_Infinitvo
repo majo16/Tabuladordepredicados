@@ -1,0 +1,1069 @@
+# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+import busqueda_verbos_infinitvo
+from busqueda_verbos_infinitvo import *
+from verbos_pasado import *
+import re
+
+verbos = open("verbos_infinitivo.txt","r")
+
+lista_verbos = []
+for line in verbos:
+    lista_verbos.append(line)
+        
+    #print(lista_verbos)
+    
+for i in lista_verbos:
+    if i == "\n":
+        lista_verbos.remove(i)
+            
+    #print(lista_verbos) 
+    
+verbos_infinitivo_lista = []
+    
+for i in lista_verbos:
+    v = str(i)
+    h = v.rstrip("\n")
+    verbos_infinitivo_lista.append(h)
+    
+#print(verbos_infinitivo_lista)
+
+
+
+verbos_pasado_lista = []
+
+
+for i in verbos_sin_espacio:
+    l = len(i)
+    if i == "andar":
+        verbos_pasado_lista.append("anduvo")
+        
+    elif i == "transponer":
+        verbos_pasado_lista.append("transpuso")
+        
+    elif i == "traer":
+        verbos_pasado_lista.append("trajo")
+        
+    elif i == "tener":
+        verbos_pasado_lista.append("tuvo")
+        
+    elif i == "sustraer":
+        verbos_pasado_lista.append("sustrajo")
+        
+    elif i == "suponer":
+        verbos_pasado_lista.append("supuso")
+        
+    elif i == "sostener":
+        verbos_pasado_lista.append("sostuvo")
+        
+    elif i == "sobreponer":
+        verbos_pasado_lista.append("sobrepuso")
+        
+    elif i == "ser":
+        verbos_pasado_lista.append("fue")
+        
+    elif i == "satisfacer":
+        verbos_pasado_lista.append("satisfizo")
+        
+    elif i == "saber":
+        verbos_pasado_lista.append("supo")
+        
+    elif i == "roer":
+        verbos_pasado_lista.append("royó")
+        
+    elif i == "retener":
+        verbos_pasado_lista.append("retuvo")
+        
+    elif i == "reponer":
+        verbos_pasado_lista.append("repuso")
+        
+    elif i == "querer":
+        verbos_pasado_lista.append("quiso")
+        
+    elif i == "proponer":
+        verbos_pasado_lista.append("propuso")
+        
+    elif i == "proveer":
+        verbos_pasado_lista.append("proveyó")
+        
+    elif i == "poner":
+        verbos_pasado_lista.append("puso")
+        
+    elif i == "poder":
+        verbos_pasado_lista.append("pudo")
+        
+    elif i == "oponer":
+        verbos_pasado_lista.append("opuso")
+        
+    elif i == "obetener":
+        verbos_pasado_lista.append("obtuvo")
+        
+    elif i == "mantener":
+        verbos_pasado_lista.append("mantuvo")
+        
+    elif i == "leer":
+        verbos_pasado_lista.append("leyó")
+        
+    elif i == "imponer":
+        verbos_pasado_lista.append("impuso")
+        
+    elif i == "hacer":
+        verbos_pasado_lista.append("hizo")
+        
+    elif i == "haber":
+        verbos_pasado_lista.append("hubo")
+        
+    elif i == "estar":
+        verbos_pasado_lista.append("estuvo")
+        
+    elif i == "entretener":
+        verbos_pasado_lista.append("entretuvo")
+        
+    elif i == "extraer":
+        verbos_pasado_lista.append("extrajo")
+        
+    elif i == "exponer":
+        verbos_pasado_lista.append("expuso")
+        
+    elif i == "distraer":
+        verbos_pasado_lista.append("distrajo")
+        
+    elif i ==  "deshacer":
+        verbos_pasado_lista.append("deshizo")
+        
+    elif i ==  "descomponer":
+        verbos_pasado_lista.append("descompuso")
+        
+    elif i == "deponer":
+        verbos_pasado_lista.append("depuso")
+        
+    elif i == "disponer":
+        verbos_pasado_lista.append("dispuso")
+        
+    elif i == "detener":
+        verbos_pasado_lista.append("detuvo")
+        
+    elif i ==  "dar":
+        verbos_pasado_lista.append("dió")
+        
+    elif i == "componer":
+        verbos_pasado_lista.append("compuso")
+        
+    elif i == "creer":
+        verbos_pasado_lista.append("creyó")
+        
+    elif i == "contraer":
+        verbos_pasado_lista.append("contrajo")
+        
+    elif i == "contener":
+        verbos_pasado_lista.append("contuvo")
+        
+    elif i == "caer":
+        verbos_pasado_lista.append("cayó")
+    
+    elif i == "decir":
+        verbos_pasado_lista.append("dijo")
+    
+    elif i == "pedir":
+        verbos_pasado_lista.append("pidió")
+        
+    elif i == "ir":
+        verbos_pasado_lista.append("fue")
+        
+    elif i == "oir":
+        verbos_pasado_lista.append("oyó")
+        
+    elif i == "divertir":
+        verbos_pasado_lista.append("divirtió")
+        
+    elif i == "vestir":
+        verbos_pasado_lista.append("vistió")
+        
+    elif i == "advertir":
+        verbos_pasado_lista.append("advirtió")
+        
+    elif i == "competir":
+        verbos_pasado_lista.append("compitió")
+        
+    elif i == "lucir":
+        verbos_pasado_lista.append("lució")
+        
+    elif i[-4:len(i)] == "eñir":
+        x = i[:-4] + "iñó"
+        verbos_pasado_lista.append(x)
+        
+    elif i[-3:len(i)] == "ñir":
+        x = i[:-2] + "ó"
+        verbos_pasado_lista.append(x) 
+        
+    elif i[-4:len(i)] == "ucir":
+        x = i[:-3] + "jo"
+        verbos_pasado_lista.append(x) 
+
+    elif i[-1] == "r" and i[-2] == "a":
+        x = i[:l-2] + "ó"
+        verbos_pasado_lista.append(x)
+        
+    elif i[-1] == "r" and i[-2] == "e":
+        x = i[:l-2] +"ió"
+        verbos_pasado_lista.append(x)
+        
+    elif (i[-1] == "r" and i[-2] == "i") or (i[-1] == "r" and i[-2] == "i" and i[-3] == "e"):
+        x = i[:l-2] + "ió"
+        verbos_pasado_lista.append(x)
+        
+    else:
+        verbos_pasado_lista.append("N/A")
+
+#print(verbos_pasado_lista)
+
+verbos_futuro_lista =[]
+
+for i in verbos_sin_espacio:
+    l = len(i)
+    
+    if i == "caber":
+        verbos_futuro_lista.append("cabrá" )
+        
+    elif i == "decir":
+        verbos_futuro_lista.append("dirá" )
+        
+    elif i == "haber":
+        verbos_futuro_lista.append("habrá" )
+        
+    elif i == "poder":
+        verbos_futuro_lista.append("podrá" )
+        
+    elif i == "poner":
+        verbos_futuro_lista.append("pondrá" )
+        
+    elif i == "querer":
+        verbos_futuro_lista.append("querrá" )
+        
+    elif i == "saber":
+        verbos_futuro_lista.append("sabrá" )
+        
+    elif i == "salir":
+        verbos_futuro_lista.append("saldrá" )
+        
+    elif i == "tener":
+        verbos_futuro_lista.append("tendrá" )
+        
+    elif i == "valer":
+        verbos_futuro_lista.append("valdrá" )
+        
+    elif i == "venir":
+        verbos_futuro_lista.append("vendrá" )
+        
+    elif i == "oponer":
+        verbos_futuro_lista.append("opondrá")
+    
+    elif i[-1]== "r" and (i[-2] == "a" or "e" or "i"):
+        x = i[:-1] + "rá"
+        verbos_futuro_lista.append(x)
+        
+    else:
+        verbos_futuro_lista.append("N/A")
+        
+#print(verbos_futuro_lista)
+
+verbos_presente_lista = []
+
+
+for i in verbos_sin_espacio:
+    l = len(i)
+    if i == "cerrar":
+        verbos_presente_lista.append("cierra")
+        
+    elif i == "oir":
+        verbos_presente_lista.append("oye")
+        
+    elif i == "advertir":
+        verbos_presente_lista.append("advierte")
+        
+    elif i == "volar":
+        verbos_presente_lista.append("vuela")
+        
+    elif i == "vilipendiar":
+        verbos_presente_lista.append("vilipendia")
+    
+    elif i == "vestir":
+        verbos_presente_lista.append("viste")
+    
+    elif i == "venir":
+        verbos_presente_lista.append("viene")
+    
+    elif i == "decir":
+        verbos_presente_lista.append("dice")
+        
+    elif i == "volver":
+        verbos_presente_lista.append("vuelve")
+    
+    elif i == "torcer":
+        verbos_presente_lista.append("tuerce")
+        
+    elif i == "teñir":
+        verbos_presente_lista.append("tiñe")
+        
+    elif i == "tentar":
+        verbos_presente_lista.append("tienta")
+        
+    elif i == "tener":
+        verbos_presente_lista.append("tiene")
+        
+    elif i == "tender":
+        verbos_presente_lista.append("tiende")
+        
+    elif i == "temblar":
+        verbos_presente_lista.append("tiembla")
+        
+    elif i == "tapiar":
+        verbos_presente_lista.append("tapia")
+        
+    elif i == "sustituir":
+        verbos_presente_lista.append("sustituye")
+        
+    elif i == "sugerir":
+        verbos_presente_lista.append("sugiere")
+        
+    elif i == "soñar":
+        verbos_presente_lista.append("sueña")
+        
+    elif i == "soñar":
+        verbos_presente_lista.append("sueña")
+        
+    elif i == "sostener":
+        verbos_presente_lista.append("sostiene")
+        
+    elif i == "sonar":
+        verbos_presente_lista.append("suena")
+        
+    elif i == "soltar":
+        verbos_presente_lista.append("suelta")
+        
+    elif i == "soler":
+        verbos_presente_lista.append("suele")
+        
+    elif i == "sitiar":
+        verbos_presente_lista.append("sitia")
+        
+    elif i == "servir":
+        verbos_presente_lista.append("sirve")
+        
+    elif i == "serrar":
+        verbos_presente_lista.append("sierra")
+        
+    elif i == "ser":
+        verbos_presente_lista.append("es")
+        
+    elif i == "sentir":
+        verbos_presente_lista.append("siente")
+        
+    elif i == "sentar":
+        verbos_presente_lista.append("sienta")
+        
+    elif i == "sembrar":
+        verbos_presente_lista.append("siembra")
+        
+    elif i == "seguir":
+        verbos_presente_lista.append("sigue")
+        
+    elif i == "segar":
+        verbos_presente_lista.append("siega")
+        
+    elif i == "seguir":
+        verbos_presente_lista.append("sigue")
+        
+    elif i == "saciar":
+        verbos_presente_lista.append("sacia")
+        
+    elif i == "rumiar":
+        verbos_presente_lista.append("rumia")
+        
+    elif i == "rogar":
+        verbos_presente_lista.append("ruega")
+        
+    elif i == "revolver":
+        verbos_presente_lista.append("revuelve")
+        
+    elif i == "reverenciar":
+        verbos_presente_lista.append("reverencia")
+        
+    elif i == "retener":
+        verbos_presente_lista.append("retiene")
+        
+    elif i == "resonar":
+        verbos_presente_lista.append("resuena")
+        
+    elif i == "resolver":
+        verbos_presente_lista.append("resuelve")
+        
+    elif i == "requerir":
+        verbos_presente_lista.append("requiere")
+        
+    elif i == "renovar":
+        verbos_presente_lista.append("renueva")
+        
+    elif i == "remover":
+        verbos_presente_lista.append("remueve")
+        
+    elif i == "recostar":
+        verbos_presente_lista.append("recuesta")
+        
+    elif i == "reconstruir":
+        verbos_presente_lista.append("reconstruye")
+        
+    elif i == "rodar":
+        verbos_presente_lista.append("rueda")
+        
+    elif i == "reñir":
+        verbos_presente_lista.append("riñe")
+        
+    elif i == "repetir":
+        verbos_presente_lista.append("repite")
+        
+    elif i == "rendir":
+        verbos_presente_lista.append("rinde")
+        
+    elif i == "regir":
+        verbos_presente_lista.append("rige")
+        
+    elif i == "regar":
+        verbos_presente_lista.append("riega")
+        
+    elif i == "refugiar":
+        verbos_presente_lista.append("refugia")
+        
+    elif i == "reforzar":
+        verbos_presente_lista.append("refuerza")
+        
+    elif i == "referir":
+        verbos_presente_lista.append("refiere")
+        
+    elif i == "recordar":
+        verbos_presente_lista.append("recuerda")
+        
+    elif i == "recluir":
+        verbos_presente_lista.append("recluye")
+        
+    elif i == "radiar":
+        verbos_presente_lista.append("radia")
+        
+    elif i == "rabiar":
+        verbos_presente_lista.append("rabia")
+        
+    elif i == "querer":
+        verbos_presente_lista.append("quiere")
+        
+    elif i == "quebrar":
+        verbos_presente_lista.append("quiebra")
+        
+    elif i == "provenir":
+        verbos_presente_lista.append("proviene")
+        
+    elif i == "propiciar":
+        verbos_presente_lista.append("propicia")
+        
+    elif i == "pronunciar":
+        verbos_presente_lista.append("pronuncia")
+        
+    elif i == "principiar":
+        verbos_presente_lista.append("principia")
+        
+    elif i == "presenciar":
+        verbos_presente_lista.append("presencia")
+        
+    elif i == "poblar":
+        verbos_presente_lista.append("puebla")
+        
+    elif i == "proseguir":
+        verbos_presente_lista.append("prosigue")
+        
+    elif i == "promover":
+        verbos_presente_lista.append("promueve")
+        
+    elif i == "proferir":
+        verbos_presente_lista.append("profiere")
+        
+    elif i == "probar":
+        verbos_presente_lista.append("prueba")
+        
+    elif i == "prevenir":
+        verbos_presente_lista.append("previene")
+        
+    elif i == "presagiar":
+        verbos_presente_lista.append("presagia")
+        
+    elif i == "premiar":
+        verbos_presente_lista.append("premia")
+        
+    elif i == "preferir":
+        verbos_presente_lista.append("prefiere")
+    
+    elif i == "poder":
+        verbos_presente_lista.append("puede")
+        
+    elif i == "plagiar":
+        verbos_presente_lista.append("plagia")
+        
+    elif i == "perseguir":
+        verbos_presente_lista.append("persigue")
+        
+    elif i == "perder":
+        verbos_presente_lista.append("pierde")
+        
+    elif i == "pensar":
+        verbos_presente_lista.append("piensa")
+        
+    elif i == "pedir":
+        verbos_presente_lista.append("pide")
+        
+    elif i == "parodiar":
+        verbos_presente_lista.append("parodia")
+        
+    elif i == "oler":
+        verbos_presente_lista.append("huele")
+        
+    elif i == "oficiar":
+        verbos_presente_lista.append("oficia")
+     
+    elif i == "obtener":
+        verbos_presente_lista.append("obtiene")
+        
+    elif i == "obsequiar":
+        verbos_presente_lista.append("obsequia")
+        
+    elif i == "negociar":
+        verbos_presente_lista.append("negocia")
+        
+    elif i == "mover":
+        verbos_presente_lista.append("mueve")
+        
+    elif i == "mostrar":
+        verbos_presente_lista.append("muestra")
+        
+    elif i == "morir":
+        verbos_presente_lista.append("muere")
+        
+    elif i == "morder":
+        verbos_presente_lista.append("muerde")
+        
+    elif i == "moler":
+        verbos_presente_lista.append("muele")
+        
+    elif i == "mentir":
+        verbos_presente_lista.append("miente")
+    
+    elif i == "medir":
+        verbos_presente_lista.append("mide")
+        
+    elif i == "mediar":
+        verbos_presente_lista.append("media")
+        
+    elif i == "mantener":
+        verbos_presente_lista.append("mantiene")
+        
+    elif i == "manifestar":
+        verbos_presente_lista.append("manifiesta")
+        
+    elif i == "maldecir":
+        verbos_presente_lista.append("maldice")
+        
+    elif i == "llover":
+        verbos_presente_lista.append("llueve")  
+        
+    elif i == "lisiar":
+        verbos_presente_lista.append("lisia")
+        
+    elif i == "limpiar":
+        verbos_presente_lista.append("limpia")
+        
+    elif i == "lidiar":
+        verbos_presente_lista.append("lidia")
+        
+    elif i == "jugar":
+        verbos_presente_lista.append("juega")
+        
+    elif i == "irradiar":
+        verbos_presente_lista.append("irradia") 
+        
+    elif i == "ir":
+        verbos_presente_lista.append("va")
+        
+    elif i == "investir":
+        verbos_presente_lista.append("inviste")
+        
+    elif i == "invertir":
+        verbos_presente_lista.append("invierte")
+        
+    elif i == "intuir":
+        verbos_presente_lista.append("intuye")
+        
+    elif i == "intervenir":
+        verbos_presente_lista.append("interviene")
+        
+    elif i == "intercambiar":
+        verbos_presente_lista.append("intercambia")
+        
+    elif i == "instruir":
+        verbos_presente_lista.append("instruye")
+        
+    elif i == "injuriar":
+        verbos_presente_lista.append("injuria") 
+        
+    elif i == "iniciar":
+        verbos_presente_lista.append("inicia")
+        
+    elif i == "ingerir":
+        verbos_presente_lista.append("ingiere")
+        
+    elif i == "ingeniar":
+        verbos_presente_lista.append("ingenia")
+        
+    elif i == "influir":
+        verbos_presente_lista.append("influye")
+        
+    elif i == "influenciar":
+        verbos_presente_lista.append("influencia")
+        
+    elif i == "incluir":
+        verbos_presente_lista.append("incluye")
+        
+    elif i == "impedir":
+        verbos_presente_lista.append("impide")
+        
+    elif i == "imbuir":
+        verbos_presente_lista.append("imbuye")
+        
+    elif i == "huir":
+        verbos_presente_lista.append("huye")
+        
+    elif i == "holgar":
+        verbos_presente_lista.append("huelga")
+        
+    elif i == "hervir":
+        verbos_presente_lista.append("hierve")
+        
+    elif i == "herir":
+        verbos_presente_lista.append("hiere")
+        
+    elif i == "heder":
+        verbos_presente_lista.append("hiede")
+        
+    elif i == "haber":
+        verbos_presente_lista.append("hay|ha")
+    
+    elif i == "gemir":
+        verbos_presente_lista.append("gime")
+        
+    elif i == "garantir":
+        verbos_presente_lista.append("n/a")
+        
+    elif i == "fotocopear":
+        verbos_presente_lista.append("fotocopia")
+        
+    elif i == "forzar":
+        verbos_presente_lista.append("fuerza")
+        
+    elif i == "fluir":
+        verbos_presente_lista.append("fluye")
+        
+    elif i == "fastidiar":
+        verbos_presente_lista.append("fastidia")
+        
+    elif i == "expropiar":
+        verbos_presente_lista.append("expropia")
+        
+    elif i == "exiliar":
+        verbos_presente_lista.append("exilia")
+        
+    elif i == "estar":
+        verbos_presente_lista.append("está")
+        
+    elif i == "esforzar":
+        verbos_presente_lista.append("esfuerza")
+        
+    elif i == "erguir":
+        verbos_presente_lista.append("yergue|irgue")
+        
+    elif i == "envidiar":
+        verbos_presente_lista.append("envidia")
+        
+    elif i == "enunciar":
+        verbos_presente_lista.append("enuncia")
+        
+    elif i == "entretener":
+        verbos_presente_lista.append("entretiene")
+        
+    elif i == "encerrar":
+        verbos_presente_lista.append("encierra")
+        
+    elif i == "expedir":
+        verbos_presente_lista.append("expide")
+        
+    elif i == "excluir":
+        verbos_presente_lista.append("excluye")
+        
+    elif i == "estudiar":
+        verbos_presente_lista.append("estudia")
+        
+    elif i == "errar":
+        verbos_presente_lista.append("erra|yerra")
+        
+    elif i == "envolver":
+        verbos_presente_lista.append("envuelve")
+        
+    elif i == "entrever":
+        verbos_presente_lista.append("entrevé")
+        
+    elif i == "enterrar":
+        verbos_presente_lista.append("entierra")
+        
+    elif i == "entender":
+        verbos_presente_lista.append("entiende")
+        
+    elif i == "ensuciar":
+        verbos_presente_lista.append("ensucia")
+        
+    elif i == "encender":
+        verbos_presente_lista.append("enciende") 
+        
+    elif i == "empezar":
+        verbos_presente_lista.append("empieza")
+        
+    elif i == "empedernir":
+        verbos_presente_lista.append("n/a")
+        
+    elif i == "elogiar":
+        verbos_presente_lista.append("elogia")   
+        
+    elif i == "elegeir":
+        verbos_presente_lista.append("elige")
+        
+    elif i == "divorciar":
+        verbos_presente_lista.append("divorcia")
+        
+    elif i == "disociar":
+        verbos_presente_lista.append("disocia")
+        
+    elif i == "disminuir":
+        verbos_presente_lista.append("disminuye")
+        
+    elif i == "diluviar":
+        verbos_presente_lista.append("diluvia")
+        
+    elif i == "diferir":
+        verbos_presente_lista.append("difiere")
+        
+    elif i == "diferenciar":
+        verbos_presente_lista.append("diferencia") 
+        
+    elif i == "devenir":
+        verbos_presente_lista.append("deviene")
+        
+    elif i == "desvestir":
+        verbos_presente_lista.append("desviste")
+        
+    elif i == "desquiciar":
+        verbos_presente_lista.append("desquicia")
+        
+    elif i == "despreciar":
+        verbos_presente_lista.append("desprecia")
+        
+    elif i == "despertar":
+        verbos_presente_lista.append("despierta")
+        
+    elif i == "desperdiciar":
+        verbos_presente_lista.append("desperdicia")
+        
+    elif i == "desenvolver":
+        verbos_presente_lista.append("desenvuelve")
+        
+    elif i == "descolgar":
+        verbos_presente_lista.append("descuelga")
+        
+    elif i == "descender":
+        verbos_presente_lista.append("desciende")
+        
+    elif i == "derretir":
+        verbos_presente_lista.append("derrite")
+        
+    elif i == "dormir":
+        verbos_presente_lista.append("duerme")
+        
+    elif i == "doler":
+        verbos_presente_lista.append("duele")
+        
+    elif i == "divertir":
+        verbos_presente_lista.append("divierte")
+        
+    elif i == "distribuir":
+        verbos_presente_lista.append("distribuye")
+        
+    elif i == "disolver":
+        verbos_presente_lista.append("disuelve")
+        
+    elif i == "disentir":
+        verbos_presente_lista.append("disiente")
+        
+    elif i == "devolver":
+        verbos_presente_lista.append("devuelve")
+        
+    elif i == "detener":
+        verbos_presente_lista.append("detiene")   
+    
+    elif i == "destruir":
+        verbos_presente_lista.append("destruye")
+        
+    elif i == "despedir":
+        verbos_presente_lista.append("despide")
+        
+    elif i == "desahuciar":
+        verbos_presente_lista.append("desahucia")
+        
+    elif i == "derruir":
+        verbos_presente_lista.append("derruye")
+        
+    elif i == "depreciar":
+        verbos_presente_lista.append("deprecia")
+    
+    elif i == "denunciar":
+        verbos_presente_lista.append("denuncia")
+        
+    elif i == "demostrar":
+        verbos_presente_lista.append("demuestra")
+        
+    elif i == "demoler":
+        verbos_presente_lista.append("demuele")
+        
+    elif i == "custodiar":
+        verbos_presente_lista.append("custodia")
+        
+    elif i == "copiar":
+        verbos_presente_lista.append("copia")
+        
+    elif i == "contribuir":
+        verbos_presente_lista.append("contribuye")
+        
+    elif i == "contradecir":
+        verbos_presente_lista.append("contradice")
+        
+    elif i == "contagiar":
+        verbos_presente_lista.append("contagia")
+        
+    elif i == "constituir":
+        verbos_presente_lista.append("constituye")
+        
+    elif i == "consentir":
+        verbos_presente_lista.append("consiente")
+        
+    elif i == "conmover":
+        verbos_presente_lista.append("conmueve")
+        
+    elif i == "confesar":
+        verbos_presente_lista.append("confiesa")
+        
+    elif i == "conferir":
+        verbos_presente_lista.append("confiere")
+        
+    elif i == "concebir":
+        verbos_presente_lista.append("concibe")
+        
+    elif i == "comprobar":
+        verbos_presente_lista.append("comprueba")
+        
+    elif i == "competir":
+        verbos_presente_lista.append("compite")
+        
+    elif i == "comerciar":
+        verbos_presente_lista.append("comercia")
+        
+    elif i == "colar":
+        verbos_presente_lista.append("cuela")
+        
+    elif i == "costar":
+        verbos_presente_lista.append("cuesta")
+        
+    elif i == "corregir":
+        verbos_presente_lista.append("corrige")
+        
+    elif i == "convertir":
+        verbos_presente_lista.append("convierte")
+        
+    elif i == "contener":
+        verbos_presente_lista.append("contiene")
+        
+    elif i == "contar":
+        verbos_presente_lista.append("cuenta")
+        
+    elif i == "construir":
+        verbos_presente_lista.append("construye")
+        
+    elif i == "conseguir":
+        verbos_presente_lista.append("consigue")
+        
+    elif i == "confluir":
+        verbos_presente_lista.append("confluye")
+        
+    elif i == "concluir":
+        verbos_presente_lista.append("concluye")
+        
+    elif i == "conciliar":
+        verbos_presente_lista.append("concilia")
+        
+    elif i == "concertar":
+        verbos_presente_lista.append("concierta")
+        
+    elif i == "comenzar":
+        verbos_presente_lista.append("comienza")
+        
+    elif i == "colgar":
+        verbos_presente_lista.append("cuelga")
+        
+    elif i == "codiciar":
+        verbos_presente_lista.append("codicia")
+        
+    elif i == "circuir":
+        verbos_presente_lista.append("circuye")
+        
+    elif i == "cambiar":
+        verbos_presente_lista.append("cambia")
+        
+    elif i == "calumniar":
+        verbos_presente_lista.append("calumnia")
+        
+    elif i == "calentar":
+        verbos_presente_lista.append("calienta")
+        
+    elif i == "beneficiar":
+        verbos_presente_lista.append("beneficia")
+        
+    elif i == "auspiciar":
+        verbos_presente_lista.append("auspicia")
+        
+    elif i == "asociar":
+        verbos_presente_lista.append("asocia")
+        
+    elif i == "asfixiar":
+        verbos_presente_lista.append("asfixia")
+        
+    elif i == "asediar":
+        verbos_presente_lista.append("asedia")
+        
+    elif i == "apremiar":
+        verbos_presente_lista.append("apremia")
+        
+    elif i == "apreciar":
+        verbos_presente_lista.append("aprecia")
+        
+    elif i == "anunciar":
+        verbos_presente_lista.append("anuncia")
+        
+    elif i == "anestesiar":
+        verbos_presente_lista.append("anestesia")
+        
+    elif i == "almorzar":
+        verbos_presente_lista.append("almuerza")
+        
+    elif i == "ajusticiar":
+        verbos_presente_lista.append("ajusticia")
+        
+    elif i == "agraviar":
+        verbos_presente_lista.append("agravia")
+        
+    elif i == "agenciar":
+        verbos_presente_lista.append("agencia")
+        
+    elif i == "atender":
+        verbos_presente_lista.append("atiende")
+        
+    elif i == "asentir":
+        verbos_presente_lista.append("asiente")
+        
+    elif i == "arrepentir":
+        verbos_presente_lista.append("arrepiente")
+        
+    elif i == "apostar":
+        verbos_presente_lista.append("apuesta")
+        
+    elif i == "aliviar":
+        verbos_presente_lista.append("alivia")
+        
+    elif i == "agriar":
+        verbos_presente_lista.append("agria")
+        
+    elif i == "adherir":
+        verbos_presente_lista.append("adhiere")
+        
+    elif i == "acariciar":
+        verbos_presente_lista.append("acaricia")
+        
+    elif i == "abreviar":
+        verbos_presente_lista.append("abrevia")
+        
+    elif i[-3:l] == "iar":
+        x = i[:-3] + "ía"
+        verbos_presente_lista.append(x)    
+        
+    elif i[-3:l] == "uar":
+        x = i[:-3] + "úa"
+        verbos_presente_lista.append(x)
+        
+    elif i[-2:l] == "ar":
+        x = i[:-2] + "a"
+        verbos_presente_lista.append(x)
+        
+    elif i[-2:l] == "er":
+        x = i[:-2] + "e"
+        verbos_presente_lista.append(x)
+    
+    elif i[-2:l] == "ir":
+        x = i[:-2] + "e"
+        verbos_presente_lista.append(x)
+        
+    else:
+        verbos_presente_lista.append("N/A")
+
+#===============================================================================
+# print(verbos_presente_lista)
+# 
+# #print(verbos_infinitivo_lista)
+# 
+# count1 = 0
+# for i in verbos_pasado_lista:
+#     count1 +=1
+#     
+# print("verbos pasado", count1)
+# 
+# count2 = 0
+# for i in verbos_futuro_lista:
+#     count2 +=1
+#     
+# print("verbos futuro", count2)
+# 
+# count3 = 0
+# for i in verbos_presente_lista:
+#     count3 +=1
+#     
+# print("verbos presente", count3)
+# 
+# count4 = 0
+# for i in verbos_infinitivo_lista:
+#     count4 +=1
+#      
+# print("verbos infinitivo", count3)
+#===============================================================================
+ 
+ 
+tupla_verbos = tuple( zip (verbos_infinitivo_lista, verbos_futuro_lista, verbos_pasado_lista, verbos_presente_lista))
+ 
+print(tupla_verbos)
+
+def buscar_infinitivo(verbo):
+    for i in tupla_verbos:
+        for a in i:
+            if a == verbo:
+                print(i[0])
+
+#x = input("Escriba un verbo: ")
+buscar_infinitivo("abandona")
