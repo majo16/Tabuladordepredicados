@@ -1,0 +1,396 @@
+#-*- coding: utf-8 -*-
+#PARTE REGEX SACA LA FRASES DEL TEXTO
+import inspect
+import re
+
+#===============================================================================
+# texto = """Cocacola se compromete a realizar los trabajos necesarios para disponer de la cantidad de productos solicitados por Carulla.
+# Coca-cola sugiere que se hagan ciertos cambios en la disponibilidad de Carulla. Mas alla de eso, se rectifica que los costos van a quedar igual.
+# Finalmente cocacola agradece a los colaboradores. Cocacola ha colaborado con carulla. Hola. Cocacola la hace.
+# """
+#===============================================================================
+
+texto1 = open("contrato.txt", "r")
+texto = ""
+for line in texto1:
+    texto += line
+
+
+patron_sujeto = re.compile(r"[Ee]mpleador")
+patron_puntos = re.compile(r"[\.|\,]")
+
+matches_sujeto = patron_sujeto.finditer(texto)
+
+indices_puntos = re.finditer("\.",texto)
+
+lista_indices_puntos = []
+for punto in indices_puntos:
+    #print(punto.span(), punto.group())
+    #print ("El indice del punto es: {0}".format(punto.start(0)))
+    lista_indices_puntos.append(punto.start(0))
+
+indices_sujeto = []
+for match in re.finditer(r"[Ee]mpleador(\s)",texto):
+    #print(match.span(), match.group())
+    indices_sujeto.append(match.span())
+
+indice_inicial_sujeto = []
+for i in indices_sujeto:
+    indice_inicial_sujeto.append(i[0])
+            
+lista_g = []
+#print(indice_inicial_sujeto)
+#print("="*100)
+
+for i in indice_inicial_sujeto:
+    for a in lista_indices_puntos:
+        if i < a:
+            lista_g.append((i,a))
+            break
+         
+#print("####"*10)
+#print(lista_g)   
+         
+#for i in lista_g:
+#    print(texto[i[0]:i[1]])
+
+#print("="*100)
+for line in texto1:
+    texto += line
+
+
+patron_sujeto = re.compile(r"[Tt]rabajador")
+patron_puntos = re.compile(r"[\.|\,]")
+
+matches_sujeto = patron_sujeto.finditer(texto)
+
+indices_puntos = re.finditer("\.",texto)
+
+lista_indices_puntos = []
+for punto in indices_puntos:
+    #print ("El indice del punto es: {0}".format(punto.start(0)))
+    lista_indices_puntos.append(punto.start(0))
+
+indices_sujeto = []
+for match in re.finditer(r"[Tt]rabajador(\s)",texto):
+    #print(match.span(), match.group())
+    indices_sujeto.append(match.span())
+
+indice_inicial_sujeto = []
+for i in indices_sujeto:
+    indice_inicial_sujeto.append(i[0])
+            
+lista_f = []
+
+for i in indice_inicial_sujeto:
+    for a in lista_indices_puntos:
+        if i < a:
+            lista_f.append((i,a))
+            break
+
+frases = []
+for i in lista_g:
+    m = texto[i[0]:i[1]]
+    frases.append(m)
+    print(m)  
+
+print("==="*100)         
+for i in lista_f:
+    m = texto[i[0]:i[1]]
+    frases.append(m)
+    print(m)
+def traduccion(tex):
+
+    #lista de palabras de cada categoria.
+    nc = ["hombre", "mujer", "libro", "animal", "niño","niña","fruta","amigo","amiga","profesor","profesora","edificio","perro", "pajaro","gato","pais","ciudad"]
+    vi = ["camina","bebe", "corre", "duerme","nada","sonrie", "vive", "baila", "come","canta","estornuda","fracasa","grita","llora","patina","pelea","respira","trabaja"]
+    vt = ["ama", "invita", "lee", "compromete","compra", "estudia", "escribe","quiere","alimenta","asusta","dice","engaña", "evita", "llama","mira","olvida","necesita","molesta","perdona","visita", "viaja"]
+    d1 = ["un", "una"]
+    d2 = ["toda", "todo"]
+    c = ["y", "o", "si", "entonces"]
+    np = ["cocacola", "carulla","pedro", "maria", "juan", "javier","abel", "mario","valerie", "jose", "angela", "natalia", "rupaul", "carlos", "fernando", "alejandro", "miguel","esteban", "gabriela","oscar","samuel","victor","edgar", "carlos","eduardo", "sergio", "nicolas", "nathalia","camilo","sebastian","isabella","luisa","sara","rodrigo","angel", "daniel", "manuel","andres","felipe","david", "kevin","cristhian","edwin", "julian", "maría", "josé", "juana", "bart", "lisa"]
+    #-*- coding: utf-8 -*-
+#PARTE REGEX SACA LA FRASES DEL TEXTO
+import inspect
+import re
+
+#===============================================================================
+# texto = """Cocacola se compromete a realizar los trabajos necesarios para disponer de la cantidad de productos solicitados por Carulla.
+# Coca-cola sugiere que se hagan ciertos cambios en la disponibilidad de Carulla. Mas alla de eso, se rectifica que los costos van a quedar igual.
+# Finalmente cocacola agradece a los colaboradores. Cocacola ha colaborado con carulla. Hola. Cocacola la hace.
+# """
+#===============================================================================
+
+texto1 = open("contrato.txt", "r")
+texto = ""
+for line in texto1:
+    texto += line
+
+
+patron_sujeto = re.compile(r"[Ee]mpleador")
+patron_puntos = re.compile(r"[\.|\,]")
+
+matches_sujeto = patron_sujeto.finditer(texto)
+
+indices_puntos = re.finditer("\.",texto)
+
+lista_indices_puntos = []
+for punto in indices_puntos:
+    #print(punto.span(), punto.group())
+    #print ("El indice del punto es: {0}".format(punto.start(0)))
+    lista_indices_puntos.append(punto.start(0))
+
+indices_sujeto = []
+for match in re.finditer(r"[Ee]mpleador(\s)",texto):
+    #print(match.span(), match.group())
+    indices_sujeto.append(match.span())
+
+indice_inicial_sujeto = []
+for i in indices_sujeto:
+    indice_inicial_sujeto.append(i[0])
+            
+lista_g = []
+#print(indice_inicial_sujeto)
+#print("="*100)
+
+for i in indice_inicial_sujeto:
+    for a in lista_indices_puntos:
+        if i < a:
+            lista_g.append((i,a))
+            break
+         
+#print("####"*10)
+#print(lista_g)   
+         
+#for i in lista_g:
+#    print(texto[i[0]:i[1]])
+
+#print("="*100)
+for line in texto1:
+    texto += line
+
+
+patron_sujeto = re.compile(r"[Tt]rabajador")
+patron_puntos = re.compile(r"[\.|\,]")
+
+matches_sujeto = patron_sujeto.finditer(texto)
+
+indices_puntos = re.finditer("\.",texto)
+
+lista_indices_puntos = []
+for punto in indices_puntos:
+    #print ("El indice del punto es: {0}".format(punto.start(0)))
+    lista_indices_puntos.append(punto.start(0))
+
+indices_sujeto = []
+for match in re.finditer(r"[Tt]rabajador(\s)",texto):
+    #print(match.span(), match.group())
+    indices_sujeto.append(match.span())
+
+indice_inicial_sujeto = []
+for i in indices_sujeto:
+    indice_inicial_sujeto.append(i[0])
+            
+lista_f = []
+
+for i in indice_inicial_sujeto:
+    for a in lista_indices_puntos:
+        if i < a:
+            lista_f.append((i,a))
+            break
+
+frases = []
+for i in lista_g:
+    m = texto[i[0]:i[1]]
+    frases.append(m)
+    print(m)  
+
+print("==="*100)         
+for i in lista_f:
+    m = texto[i[0]:i[1]]
+    frases.append(m)
+    print(m)
+def traduccion(tex):
+
+    #lista de palabras de cada categoria.
+    nc = ["hombre", "mujer", "libro", "animal", "niño","niña","fruta","amigo","amiga","profesor","profesora","edificio","perro", "pajaro","gato","pais","ciudad"]
+    vi = ["camina","bebe", "corre", "duerme","nada","sonrie", "vive", "baila", "come","canta","estornuda","fracasa","grita","llora","patina","pelea","respira","trabaja"]
+    vt = ["ama", "invita", "lee", "compromete","compra", "estudia", "escribe","quiere","alimenta","asusta","dice","engaña", "evita", "llama","mira","olvida","necesita","molesta","perdona","visita", "viaja"]
+    d1 = ["un", "una"]
+    d2 = ["toda", "todo"]
+    c = ["y", "o", "si", "entonces"]
+    np = ["cocacola", "carulla","pedro", "maria", "juan", "javier","abel", "mario","valerie", "jose", "angela", "natalia", "rupaul", "carlos", "fernando", "alejandro", "miguel","esteban", "gabriela","oscar","samuel","victor","edgar", "carlos","eduardo", "sergio", "nicolas", "nathalia","camilo","sebastian","isabella","luisa","sara","rodrigo","angel", "daniel", "manuel","andres","felipe","david", "kevin","cristhian","edwin", "julian", "maría", "josé", "juana", "bart", "lisa"]
+    
+    #pide al usuario una frase y la pasa a minusculas y las divide en una lista.
+   
+    words1 = tex.lower()
+    words2 = words1.split(' ')
+    
+    # Elimina la preposicion "a"
+    for w in words2:
+        if w == 'a':
+            words2.remove(w)
+    
+    
+    
+    # crear una lista de categorias con base en word2
+    categorias = []
+    
+    for w in words2:
+        if w in nc:
+            categorias.append('nc')
+        elif w in vi:
+            categorias.append('vi')
+        elif w in vt:
+            categorias.append('vt')
+        elif w in d1:
+            categorias.append('d1')
+        elif w in d2:
+            categorias.append('d2')
+        elif w in c:
+            categorias.append('c')
+        elif w in np:
+            categorias.append('np')
+    
+    
+    
+    # Decir que la frase no sirve si hay palabras por fuera del rango
+    if len(categorias) < len(words2):
+        print ("No puedo computar esta frase (no conozco todas las palabras)")
+    else:
+        # crear un diccionario de categorias, dónde a cada categoria se le
+        # asigna su debida expresión lógica.
+        traducciones = []
+        for i in range(len(words2)):
+            if categorias[i] == 'nc':
+                sust = words2[i].lower()
+                
+                traducciones.append(lambda x, sust=sust: str(sust) + "(" + str(x) + ")")
+            elif categorias[i] == 'np':
+                inicial = words2[i].lower()
+                
+                traducciones.append(lambda X, inicial=inicial: X(inicial))
+            elif categorias[i] == 'vi':
+                
+                infini = words2[i]
+               
+                traducciones.append(lambda x, infini=infini: str(infini) + "(" + str(x) + ")")
+            elif categorias[i] == 'vt':
+                
+                infini = words2[i]
+               
+                traducciones.append(\
+                lambda XX:(lambda x:(XX(lambda y, infini=infini: (str(infini) + "(" + str(x) + "," + str(y) + ")")))))
+            elif categorias[i] == 'd1':
+                
+                traducciones.append(\
+                lambda X:(lambda Y:("∃x (" + X('x') + "∧" + Y('x') + ")")))
+
+        # Operar con las palabras de derecha a izquierda, aplicando la función lambda
+        # para integrar una expresión en otra
+            n = len(traducciones)
+            formula = traducciones[n - 1]
+            for i in range(0, n-1):
+                j = (n - 2) - i
+                formula = traducciones[j](formula)
+        
+          
+            print (formula)
+    
+print("="*100)
+for i in frases:
+    traduccion(i)    
+    
+    
+       
+
+
+
+
+
+    #pide al usuario una frase y la pasa a minusculas y las divide en una lista.
+   
+    words1 = tex.lower()
+    words2 = words1.split(' ')
+    
+    # Elimina la preposicion "a"
+    for w in words2:
+        if w == 'a':
+            words2.remove(w)
+    
+    
+    
+    # crear una lista de categorias con base en word2
+    categorias = []
+    
+    for w in words2:
+        if w in nc:
+            categorias.append('nc')
+        elif w in vi:
+            categorias.append('vi')
+        elif w in vt:
+            categorias.append('vt')
+        elif w in d1:
+            categorias.append('d1')
+        elif w in d2:
+            categorias.append('d2')
+        elif w in c:
+            categorias.append('c')
+        elif w in np:
+            categorias.append('np')
+    
+    
+    
+    # Decir que la frase no sirve si hay palabras por fuera del rango
+    if len(categorias) < len(words2):
+        print ("No puedo computar esta frase (no conozco todas las palabras)")
+    else:
+        # crear un diccionario de categorias, dónde a cada categoria se le
+        # asigna su debida expresión lógica.
+        traducciones = []
+        for i in range(len(words2)):
+            if categorias[i] == 'nc':
+                sust = words2[i].lower()
+                
+                traducciones.append(lambda x, sust=sust: str(sust) + "(" + str(x) + ")")
+            elif categorias[i] == 'np':
+                inicial = words2[i].lower()
+                
+                traducciones.append(lambda X, inicial=inicial: X(inicial))
+            elif categorias[i] == 'vi':
+                
+                infini = words2[i]
+               
+                traducciones.append(lambda x, infini=infini: str(infini) + "(" + str(x) + ")")
+            elif categorias[i] == 'vt':
+                
+                infini = words2[i]
+               
+                traducciones.append(\
+                lambda XX:(lambda x:(XX(lambda y, infini=infini: (str(infini) + "(" + str(x) + "," + str(y) + ")")))))
+            elif categorias[i] == 'd1':
+                
+                traducciones.append(\
+                lambda X:(lambda Y:("∃x (" + X('x') + "∧" + Y('x') + ")")))
+
+        # Operar con las palabras de derecha a izquierda, aplicando la función lambda
+        # para integrar una expresión en otra
+            n = len(traducciones)
+            formula = traducciones[n - 1]
+            for i in range(0, n-1):
+                j = (n - 2) - i
+                formula = traducciones[j](formula)
+        
+          
+            print (formula)
+    
+print("="*100)
+for i in frases:
+    traduccion(i)    
+    
+    
+       
+
+
+
+
